@@ -2,7 +2,10 @@
 # Prompt formatting                                                          #
 ##############################################################################
 autoload -Uz vcs_info # enable vcs_info
-zstyle ':vcs_info*' formats " %s(%F{green}%b%f)%u%c"
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' unstagedstr ' *'
+zstyle ':vcs_info:*' stagedstr ' +'
+zstyle ':vcs_info*' formats " %s(%F{green}%b%u%c%f)"
 precmd () {
   vcs_info
 } # always load before displaying the prompt
@@ -10,7 +13,7 @@ precmd () {
 # Original: %n@%m %1~ %#
 # Show username@machine pwd git(branch) $
 setopt prompt_subst
-PS1='%n@%m:%F{blue}%1~%f${vcs_info_msg_0_}$ '
+PS1='%n@%m:%F{blue}%1~%f${vcs_info_msg_0_} $ '
 
 ##############################################################################
 # Aliases                                                                    #
