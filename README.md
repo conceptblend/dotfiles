@@ -10,7 +10,7 @@ The install script will:
 ## Installation
 
 ```bash
-git clone git://github.com/conceptblend/dotfiles ~/dotfiles
+git clone https://github.com/conceptblend/dotfiles ~/dotfiles
 cd ~/dotfiles
 ./makesymlinks.sh
 ```
