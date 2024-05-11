@@ -15,6 +15,9 @@ precmd () {
 setopt prompt_subst
 PS1='%n@%m:%F{blue}%1~%f${vcs_info_msg_0_} $ '
 
+# Enable git autocomplete
+autoload -Uz compinit && compinit
+
 ##############################################################################
 # Aliases                                                                    #
 ##############################################################################
@@ -26,3 +29,5 @@ alias chrome="open -a 'Google Chrome'"
 
 # Enable colors in "ls" command output and add "/" to directories
 alias ls="ls -Glahp"
+export PATH="/usr/local/opt/node@18/bin:$PATH"
+
