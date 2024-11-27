@@ -40,14 +40,16 @@ autoload -Uz compinit && compinit
 # Aliases                                                                    #
 ##############################################################################
 
-alias python=/usr/local/bin/python3.10
+alias python=/opt/homebrew/bin/python3
 
 # Enable opening a file in Chrome from the command line easily
 alias chrome="open -a 'Google Chrome'"
 
 # Enable colors in "ls" command output and add "/" to directories
 alias ls="ls -Glahp"
+
 alias fabric='fabric-ai'
+alias cursor="open -a 'Cursor'"
 
 
 export PATH="/usr/local/opt/node@18/bin:$PATH"
@@ -55,3 +57,8 @@ export LDFLAGS="-L/usr/local/opt/node@18/lib"
 export CPPFLAGS="-I/usr/local/opt/node@18/include"
 
 export HOMEBREW_NO_AUTO_UPDATE=1
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
