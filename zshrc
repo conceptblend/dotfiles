@@ -6,6 +6,14 @@ zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' unstagedstr ' *'
 zstyle ':vcs_info:*' stagedstr ' +'
 zstyle ':vcs_info*' formats " %s(%F{green}%b%u%c%f)"
+# Enable completion debugging:
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*:descriptions' format '%B%d%b'
+zstyle ':completion:*:messages' format '%d'
+zstyle ':completion:*:warnings' format 'No matches for: %d'
+zstyle ':completion:*:corrections' format '%B%d (errors: %e)%b'
+zstyle ':completion:*' group-name ''
+
 precmd () {
   vcs_info
 } # always load before displaying the prompt
@@ -15,7 +23,7 @@ precmd () {
 setopt prompt_subst
 PS1='%n@%m:%F{blue}%1~%f${vcs_info_msg_0_} $ '
 
-# Enable git autocomplete
+# Enable custom autocompletes
 autoload -Uz compinit && compinit
 
 ##############################################################################
@@ -29,5 +37,11 @@ alias chrome="open -a 'Google Chrome'"
 
 # Enable colors in "ls" command output and add "/" to directories
 alias ls="ls -Glahp"
-export PATH="/usr/local/opt/node@18/bin:$PATH"
+alias fabric='fabric-ai'
 
+
+export PATH="/usr/local/opt/node@18/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/node@18/lib"
+export CPPFLAGS="-I/usr/local/opt/node@18/include"
+
+export HOMEBREW_NO_AUTO_UPDATE=1
