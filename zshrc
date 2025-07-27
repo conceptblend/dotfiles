@@ -40,7 +40,7 @@ autoload -Uz compinit && compinit
 # Aliases                                                                    #
 ##############################################################################
 
-alias python=/opt/homebrew/bin/python3
+alias python=/usr/local/bin/python3.10
 
 # Enable opening a file in Chrome from the command line easily
 alias chrome="open -a 'Google Chrome'"
