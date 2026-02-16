@@ -51,6 +51,9 @@ alias ls="ls -Glahp"
 alias fabric='fabric-ai'
 alias cursor="open -a 'Cursor'"
 
+# Super duper clear
+alias fclear="cat /dev/null > ~/.zsh_history && history -p && exit"
+
 savehistory() {
   # Default to 25 lines if no argument is provided
   # Explain `:-` -> This is the "Logic Gate." It tells the shell: "Check if the variable to the left is set and not null. If it is null, use the value to the right instead."
@@ -69,3 +72,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$HOME/.local/bin:$PATH"
