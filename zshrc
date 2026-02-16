@@ -1,4 +1,4 @@
-##############################################################################
+ ##############################################################################
 # Prompt formatting                                                          #
 ##############################################################################
 autoload -Uz vcs_info # enable vcs_info
@@ -51,10 +51,17 @@ alias ls="ls -Glahp"
 alias fabric='fabric-ai'
 alias cursor="open -a 'Cursor'"
 
+savehistory() {
+  # Default to 25 lines if no argument is provided
+  # Explain `:-` -> This is the "Logic Gate." It tells the shell: "Check if the variable to the left is set and not null. If it is null, use the value to the right instead."
+  local num_lines=${1:-25}
 
-export PATH="/usr/local/opt/node@18/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/node@18/lib"
-export CPPFLAGS="-I/usr/local/opt/node@18/include"
+  # fc -l: list history
+  # -n: suppress line numbers
+  # -E: (optional) if you want to see timestamps
+  # we calculate the range from the current command back N steps
+  fc -ln -"$num_lines" -1
+}
 
 export HOMEBREW_NO_AUTO_UPDATE=1
 
