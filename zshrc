@@ -1,3 +1,10 @@
+# OPENSPEC:START
+# OpenSpec shell completions configuration
+fpath=("/Users/ajw/.zsh/completions" $fpath)
+autoload -Uz compinit
+compinit
+# OPENSPEC:END
+
  ##############################################################################
 # Prompt formatting                                                          #
 ##############################################################################
@@ -67,6 +74,8 @@ savehistory() {
 }
 
 export HOMEBREW_NO_AUTO_UPDATE=1
+# Claude Code flag to turn off autoupdates (useful when bugs show up)
+# export DISABLE_AUTOUPDATER=1
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
