@@ -58,8 +58,17 @@ alias ls="ls -Glahp"
 alias fabric='fabric-ai'
 alias cursor="open -a 'Cursor'"
 
+# Mermaid CLI shorthand for PNGs and SVGs
+alias mmpng='mmdc -s 2 -e png -i'
+alias mmsvg='mmdc -s 2 -e svg -i'
+
 # Super duper clear
 alias fclear="cat /dev/null > ~/.zsh_history && history -p && exit"
+
+# Shorthand for compressing the last Screen Recording
+alias compress-last=~/source/utils/compress-last-mov.sh
+
+md2pdf() { pandoc -f markdown -t pdf --pdf-engine=xelatex -V geometry:margin=0.65in -V 'mainfont=Helvetica Neue' -V monofont=Menlo -V fontsize=10pt -V papersize=letter -o "${1:r}.pdf" "$1"; }
 
 savehistory() {
   # Default to 25 lines if no argument is provided
